@@ -32,7 +32,7 @@ const registerUser = async (req, res) => {
         res.status(201).json({ success: true, user, message: 'User registered successfully' });
 
     }catch(error){
-        console.log(`Error on the registerUser controller: ${error.message}`);
+        console.log(`Error on the registerUser controller: ${error}`);
         res.status(500).json({ success: false, message: "Internal server Error" });
     }
 }

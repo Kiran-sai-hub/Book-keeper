@@ -1,12 +1,13 @@
 import express from 'express';
-import { createBook, getUsersBooks } from '../controllers/books.controller.js';
+import { createBook, getUsersBooks, updateBook, deleteBook } from '../controllers/books.controller.js';
+import { protectRoute } from '../middlewares/jwt.middleware.js';
 
 const router = express.Router();
 
-router.get("/", getUsersBooks);
+router.get("/", protectRoute, getUsersBooks);
 
-router.post("/", createBook);
-router.put("/:id", updateBook);
-router.delete("/:id", deleteBook);
+router.post("/", protectRoute, createBook);
+router.put("/:id", protectRoute, updateBook);
+router.delete("/:id", protectRoute, deleteBook);
 
 export default router;
