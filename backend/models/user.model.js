@@ -16,15 +16,8 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    books: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Book',
-        },
-    ],
 }, { timestamps: true });
 
-userSchema.in
 
 userSchema.pre("save", async function (next) {
     if (!this.isModified("password")) {

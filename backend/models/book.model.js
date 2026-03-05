@@ -25,6 +25,8 @@ const bookSchema = new mongoose.Schema({
     },
 }, { timestamps: true });
 
+bookSchema.index({ user: 1 });
+
 const Book = mongoose.model('Book', bookSchema);
 
 export default Book;
