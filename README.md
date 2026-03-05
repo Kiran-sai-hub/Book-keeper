@@ -73,6 +73,7 @@ Make sure you have these installed:
    ```
    *The frontend should now be running on `http://localhost:3000`.*
 
+
 ## Project Structure
 
 Just a quick lay of the land to help you navigate:
